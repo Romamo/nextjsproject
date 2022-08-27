@@ -1,0 +1,35 @@
+name: Release CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    strategy:
+      matrix:
+        host: [nextjsproject_h2]
+    runs-on: ${{ matrix.host }}
+    environment: production
+    steps:
+#      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+#      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+#      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub ${{ github.workspace }}!"
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '*'
+          cache: npm
+
+#      - run: pwd
+
+      - run: npm install
+      - run: npm run codegen
+      - run: npm run build
+#      - run: ls -la
+      - run: rsync -a --delete .next package.json node_modules pages apollo components contexts /home/nextjsproject/nextjsproject/
+# pm2 start npm --name "asnextrel" -- run start -- -p 3002
+      - run: pm2 reload nextjsproject
