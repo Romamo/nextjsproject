@@ -23,10 +23,9 @@ jobs:
         with:
           node-version: '*'
           cache: npm
-#      - run: pwd
 
       - run: npm install
-      - run: npm run codegen
+#      - run: npm run codegen
       - run: npm run build
 #      - run: ls -la
       - run: rsync -a --delete .next package.json node_modules pages apollo components contexts /home/nextjsproject/nextjsproject/
