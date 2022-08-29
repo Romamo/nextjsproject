@@ -4,7 +4,13 @@ import React from "react";
 import logo from "../public/images/logo.svg";
 import s from "../styles/Home.module.scss";
 
+export const config = {
+  unstable_runtimeJS: false
+};
+
+
 export default function Home() {
+  
   return (
     <>
       <Head>
@@ -16,3 +22,4 @@ export default function Home() {
     </>
   );
 }
+
