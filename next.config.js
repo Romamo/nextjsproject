@@ -1,7 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+// };
+
+const moduleExports = {
+  experimental: {
+    images: {
+      layoutRaw: true,
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = moduleExports;
