@@ -30,5 +30,5 @@ jobs:
 #      - run: ls -la
       # apollo components contexts
       - run: rsync -a --delete .next package.json node_modules pages /home/nextjsproject/nextjsproject/
-# pm2 start npm --name "asnextrel" -- run start -- -p 3002
+# pm2 start npm --name "nextjsproject" -- run start -- -p 3003
       - run: pm2 reload nextjsproject
