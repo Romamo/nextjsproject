@@ -25,6 +25,7 @@ class HeadProduction extends Head {
   render() {
     const { head } = this.context._documentProps;
     const children = this.props.children;
+    console.log(process.env.NODE_ENV);
     return (
       <head {...this.props}>
         {children}
@@ -38,11 +39,13 @@ class HeadProduction extends Head {
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
+    console.log(process.env.NODE_ENV);
     return { ...initialProps };
   }
 
   render() {
     const isDev = process.env.NODE_ENV === "development";
+    console.log(process.env.NODE_ENV);
     return (
       <Html>
         {isDev ? <Head /> : <HeadProduction />}

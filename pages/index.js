@@ -10,7 +10,7 @@ export const config = {
 
 
 export default function Home() {
-  
+  console.log(process.env.NODE_ENV);
   return (
     <>
       <Head>
