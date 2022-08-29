@@ -174,6 +174,7 @@ export default function Home() {
           </AppBar>
         </div>
       )}
+      <h1>Hello</h1>
     </ThemeProvider>
   );
 }
