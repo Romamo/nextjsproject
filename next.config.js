@@ -5,12 +5,6 @@
 // };
 
 const moduleExports = {
-  experimental: {
-    images: {
-      layoutRaw: true,
-      allowFutureImage: true,
-    },
-  },
 };
 
 module.exports = moduleExports;
