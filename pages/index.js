@@ -4,7 +4,14 @@ import s from "../styles/Home.module.scss";
 import logo from "../public/images/logo.svg";
 import vercel from "../public/vercel.svg";
 import React from "react";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+
+export async function getStaticProps(context) {
+  console.log(context);
+  return {
+    props: {}, // will be passed to the page component as props
+  };
+}
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -12,6 +19,11 @@ export default function HomePage() {
   const handleClick = (index) => {
     SetState(index);
   };
+  const handleAction = () => {
+    navList.push("Item");
+    console.log(navList);
+  };
+
   return (
     <div className={s.page}>
       <header className={s.header}>
@@ -41,8 +53,8 @@ export default function HomePage() {
           <Image src={vercel} />
         </div>
         <div className={s.main}>
-          <div></div>
-          <div></div>
+          <div onClick={() => console.log("Press")}></div>
+          <div onClick={() => handleAction()}></div>
           <div></div>
           <div></div>
           <div></div>
