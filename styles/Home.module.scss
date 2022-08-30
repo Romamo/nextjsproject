@@ -41,6 +41,9 @@
     background: linear-gradient(45deg, #00c6fb, #005bea);
   }
 }
+.active {
+  border-bottom: 3px solid $blue !important;
+}
 
 .wrapper {
   .title {
