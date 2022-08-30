@@ -4,13 +4,13 @@ import s from "../styles/Home.module.scss";
 import logo from "../public/images/logo.svg";
 import vercel from "../public/vercel.svg";
 import React from "react";
+import Button from '@mui/material/Button';
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
     SetState(index);
-    alert("Alert!");
   };
   return (
     <div className={s.page}>
@@ -31,6 +31,7 @@ export default function HomePage() {
           </div>
           <div className={s.header__btns}>
             <button>Login</button>
+            <Button variant="contained">Contained</Button>
           </div>
         </div>
       </header>
