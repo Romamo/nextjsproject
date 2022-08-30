@@ -1,5 +1,67 @@
 @import "helpers";
 
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 25px;
+  div {
+    border: 1px solid gainsboro;
+    height: 250px;
+    width: 300px;
+    -webkit-box-shadow: 0px 2px 18px -4px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 2px 18px -4px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 2px 18px -4px rgba(34, 60, 80, 0.2);
+    transition: all 3s;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+  div:nth-child(1) {
+    background: linear-gradient(45deg, #a8edea, #fed6e3);
+  }
+  div:nth-child(2) {
+    background: linear-gradient(45deg, #f5f7fa, #c3cfe2);
+  }
+  div:nth-child(3) {
+    background: linear-gradient(45deg, #37ecba, #72afd3);
+  }
+  div:nth-child(4) {
+    background: linear-gradient(45deg, #fff1eb, #ace0f9);
+  }
+  div:nth-child(5) {
+    background: linear-gradient(45deg, #30cfd0, #330867);
+  }
+  div:nth-child(6) {
+    background: linear-gradient(45deg, #fddb92, #d1fdff);
+  }
+  div:nth-child(7) {
+    background: linear-gradient(45deg, #d299c2, #fef9d7);
+  }
+  div:nth-child(8) {
+    background: linear-gradient(45deg, #00c6fb, #005bea);
+  }
+}
+
+.wrapper {
+  .title {
+    padding-top: 150px;
+    margin-bottom: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+  width: calc(100vw - 100px);
+  max-width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
 .header {
   > header {
     background: white;
@@ -40,7 +102,17 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: 66px;
+    li {
+      cursor: pointer;
+      border-bottom: 2px solid rgb(208, 208, 208);
+      height: 64px;
+      width: 100px;
+      text-align: center;
+      padding-top: 20px;
+      &:hover {
+        border-bottom: 2px solid $blue;
+      }
+    }
     > div > div > span {
       height: 4px;
     }
@@ -84,6 +156,9 @@
     gap: 10px;
     button {
       @extend %Btn;
+      border-radius: 5px;
+      font-family: inherit;
+      cursor: grab;
     }
     button:first-child {
       @extend %BtnOutlined;

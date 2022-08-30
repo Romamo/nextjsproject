@@ -5,6 +5,11 @@
 // };
 
 const moduleExports = {
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = moduleExports;
