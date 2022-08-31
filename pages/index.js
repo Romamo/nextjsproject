@@ -5,13 +5,7 @@ import logo from "../public/images/logo.svg";
 import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
-
-export async function getStaticProps(context) {
-  console.log(context);
-  return {
-    props: {}, // will be passed to the page component as props
-  };
-}
+import Head from "next/head";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -23,50 +17,61 @@ export default function HomePage() {
     navList.push("Item");
     console.log(navList);
   };
+  if (typeof window !== "undefined") {
+    var btn = document.querySelector('[data-action="boolean"]');
+    console.log(btn)
+  }
 
   return (
-    <div className={s.page}>
-      <header className={s.header}>
-        <div className={s.header__wrapper}>
-          <Image src={logo} alt="AppstoreSpy Logo" />
-          <div className={s.header__nav}>
-            {navList &&
-              navList.map((item, index) => (
-                <li
-                  className={state === index ? s.active : null}
-                  onClick={() => handleClick(index)}
-                  key={index}
-                >
-                  {item}
-                </li>
-              ))}
+    <>
+      <Head>
+        <script src="/script.js" defer />
+      </Head>
+      <div className={s.page}>
+        <header className={s.header}>
+          <div className={s.header__wrapper}>
+            <Image src={logo} alt="AppstoreSpy Logo" />
+            <div className={s.header__nav}>
+              {navList &&
+                navList.map((item, index) => (
+                  <li
+                    className={state === index ? s.active : null}
+                    onClick={() => handleClick(index)}
+                    key={index}
+                  >
+                    {item}
+                  </li>
+                ))}
+            </div>
+            <div className={s.header__btns}>
+              <button id="btn" data-boolean="true">
+                Login
+              </button>
+              <Button variant="contained">Contained</Button>
+            </div>
           </div>
-          <div className={s.header__btns}>
-            <button>Login</button>
-            <Button variant="contained">Contained</Button>
+        </header>
+        <div className={s.wrapper}>
+          <div className={s.title}>
+            <h1>Welcome to Next.js!</h1>
+            <Image src={vercel} />
           </div>
-        </div>
-      </header>
-      <div className={s.wrapper}>
-        <div className={s.title}>
-          <h1>Welcome to Next.js!</h1>
-          <Image src={vercel} />
-        </div>
-        <div className={s.main}>
-          <div onClick={() => console.log("Press")}></div>
-          <div onClick={() => handleAction()}></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className={s.main}>
+            <div onClick={() => console.log("Press")}></div>
+            <div onClick={() => handleAction()}></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
 export const config = {
-  unstable_runtimeJS: false,
+  unstable_runtimeJS: true ? false : true,
 };
