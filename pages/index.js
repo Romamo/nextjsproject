@@ -6,7 +6,6 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
-import script from "../public/script.js";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -22,8 +21,10 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <script src={script} defer />
+        <script src="/script.js" defer />
       </Head>
+
+      
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
