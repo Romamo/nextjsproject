@@ -6,6 +6,8 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
+import script from "../public/script.js";
+import Script from "next/script";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -17,15 +19,11 @@ export default function HomePage() {
     navList.push("Item");
     console.log(navList);
   };
-  if (typeof window !== "undefined") {
-    var btn = document.querySelector('[data-action="boolean"]');
-    console.log(btn)
-  }
 
   return (
     <>
       <Head>
-        <script src="/script.js" defer />
+        <Script src={script} strategy="lazyOnload" />
       </Head>
       <div className={s.page}>
         <header className={s.header}>
