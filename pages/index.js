@@ -7,7 +7,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 import script from "../public/script.js";
-import Script from "next/script";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -23,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <Script src={script} strategy="lazyOnload" />
+        <script src={script} defer />
       </Head>
       <div className={s.page}>
         <header className={s.header}>
