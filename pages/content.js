@@ -48,7 +48,7 @@ export default function Content({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <Link href="/">
+              <Link href="https://next2.appstorespy.com/">
                 <Button id="btnBack" variant="outlined">
                   Back
                 </Button>
