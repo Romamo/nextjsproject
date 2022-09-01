@@ -74,8 +74,10 @@ export default function HomePage() {
 }
 
 // let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
-let boolean = Boolean(Math.round(Math.random()));
+// let boolean = Boolean(Math.round(Math.random()));
 // console.log(boolean);
+var boolean = Math.random() >= 0.5;
+console.log(boolean);
 
 export const config = {
   unstable_runtimeJS: boolean,
