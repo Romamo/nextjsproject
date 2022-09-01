@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <meta charSet="UTF-8" />
+          <link href="/fonts/roboto.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />
