@@ -7,12 +7,25 @@ import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function HomePage({}) {
+let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+console.log(boolean);
+
+export const config = {
+  unstable_runtimeJS: boolean,
+};
+
+export default function Content({}) {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
     SetState(index);
   };
+  const divList = [" ", " ", " ", " ", " ", " ", " ", " "];
+  const [rotate, SetRotate] = React.useState(null);
+  const handleRotate = (index) => {
+    SetRotate(index);
+  };
+
   return (
     <>
       <Head>
@@ -35,14 +48,9 @@ export default function HomePage({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <Link href="/content">
-                <button id="btnOn" data-boolean="true">
-                  JS On
-                </button>
-              </Link>
-              <Link href="/content">
-                <Button id="btnOff" variant="contained">
-                  JS Off
+              <Link href="/">
+                <Button id="btnBack" variant="outlined">
+                  Back
                 </Button>
               </Link>
             </div>
@@ -53,7 +61,18 @@ export default function HomePage({}) {
             <h1>Welcome to Next.js!</h1>
             <Image src={vercel} />
           </div>
-          <div className={s.main}></div>
+          <div className={s.main}>
+            {divList &&
+              divList.map((item, index) => (
+                <div
+                  className={rotate === index ? s.rotate : null}
+                  onClick={() => handleRotate(index)}
+                  key={index}
+                >
+                  {item}
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </>
