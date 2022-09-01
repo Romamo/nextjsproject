@@ -13,13 +13,6 @@ export default function HomePage() {
     SetState(index);
   };
 
-  // const root = ReactDOM.createRoot(
-  //   document.getElementById('root')
-  // );
-  // const renderPage = () => {
-  //   root.render(element);
-  // }
-
   return (
     <>
       <Head>
@@ -80,9 +73,9 @@ export default function HomePage() {
   );
 }
 
-let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
-
-console.log(boolean);
+// let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+let boolean = Boolean(Math.round(Math.random()));
+// console.log(boolean);
 
 export const config = {
   unstable_runtimeJS: boolean,
