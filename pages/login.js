@@ -34,7 +34,7 @@ function Login() {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <Link href="/content-full">
+              <Link href="/login">
                 <Button id="btnBack" variant="outlined">
                   Login
                 </Button>
@@ -44,7 +44,7 @@ function Login() {
         </header>
 
         <div className={s.center}>
-          <Link href="/content">
+          <Link href="/content-full">
             <button id="btnOn">Enter</button>
           </Link>
         </div>
