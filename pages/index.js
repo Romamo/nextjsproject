@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/future/image";
 import s from "../styles/Home.module.scss";
 import logo from "../public/images/logo.svg";
@@ -6,7 +5,6 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
-import { ConstructionOutlined } from "@mui/icons-material";
 
 export default function HomePage() {
   const navList = ["Item", "Item", "Item", "Item"];
@@ -15,12 +13,18 @@ export default function HomePage() {
     SetState(index);
   };
 
+  // const root = ReactDOM.createRoot(
+  //   document.getElementById('root')
+  // );
+  // const renderPage = () => {
+  //   root.render(element);
+  // }
+
   return (
     <>
       <Head>
         <script src="/script.js" defer />
       </Head>
-
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
@@ -38,10 +42,20 @@ export default function HomePage() {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <button id="btn" data-boolean="true">
-                Login
+              <button
+                id="btnOn"
+                onClick={() => handleClick(false)}
+                data-boolean="true"
+              >
+                JS On
               </button>
-              <Button variant="contained">Contained</Button>
+              <Button
+                id="btnOff"
+                onClick={() => handleClick(false)}
+                variant="contained"
+              >
+                JS Off
+              </Button>
             </div>
           </div>
         </header>
@@ -51,8 +65,8 @@ export default function HomePage() {
             <Image src={vercel} />
           </div>
           <div className={s.main}>
-            <div onClick={() => console.log("Press")}></div>
-            <div onClick={() => handleAction()}></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
             <div></div>
@@ -66,18 +80,10 @@ export default function HomePage() {
   );
 }
 
-if (typeof window !== "undefined") {
-  var button = document.querySelector("#btn");
-  var buttonValue = true;
-  if (localStorage.getItem("myCat") === "Tom") {
-    buttonValue = false;
-  } else {
-    buttonValue = true;
-  }
-}
+let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
 
-console.log(buttonValue);
+console.log(boolean);
 
 export const config = {
-  unstable_runtimeJS: buttonValue ? false : true,
+  unstable_runtimeJS: boolean,
 };
