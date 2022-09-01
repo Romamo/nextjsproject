@@ -6,7 +6,10 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+// let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
+
+let boolean = typeof window !== "undefined" && document.cookie === "user=John";
+
 console.log(boolean);
 
 export const config = {
