@@ -29,6 +29,6 @@ jobs:
       - run: npm run build
 #      - run: ls -la
       # apollo components contexts
-      - run: rsync -a --delete .next package.json node_modules pages /home/nextjsproject/nextjsproject/
+      - run: rsync -a --delete .next package.json node_modules pages public /home/nextjsproject/nextjsproject/
 # pm2 start npm --name "nextjsproject" -- run start -- -p 3003
       - run: pm2 reload nextjsproject
