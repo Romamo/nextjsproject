@@ -8,7 +8,8 @@ import Head from "next/head";
 
 // let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
 
-let boolean = typeof window !== "undefined" && document.cookie === "user=John";
+let boolean =
+  typeof window !== "undefined" && document.cookie.includes("user=John");
 
 console.log(boolean);
 
