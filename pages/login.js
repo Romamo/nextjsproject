@@ -1,30 +1,17 @@
+import React from "react";
+import Head from "next/head";
 import Image from "next/future/image";
 import s from "../styles/Home.module.scss";
 import logo from "../public/images/logo.svg";
-import vercel from "../public/vercel.svg";
-import React from "react";
 import Button from "@mui/material/Button";
-import Head from "next/head";
+import Link from "next/link";
 
-let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
-console.log(boolean);
-
-export const config = {
-  unstable_runtimeJS: boolean,
-};
-
-export default function Content({}) {
+function Login() {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
     SetState(index);
   };
-  const divList = [" ", " ", " ", " ", " ", " ", " ", " "];
-  const [rotate, SetRotate] = React.useState(null);
-  const handleRotate = (index) => {
-    SetRotate(index);
-  };
-
   return (
     <>
       <Head>
@@ -55,25 +42,15 @@ export default function Content({}) {
             </div>
           </div>
         </header>
-        <div className={s.wrapper}>
-          <div className={s.title}>
-            <h1>Welcome to Next.js!</h1>
-            <Image src={vercel} />
-          </div>
-          <div className={s.main}>
-            {divList &&
-              divList.map((item, index) => (
-                <div
-                  className={rotate === index ? s.rotate : null}
-                  onClick={() => handleRotate(index)}
-                  key={index}
-                >
-                  {item}
-                </div>
-              ))}
-          </div>
+
+        <div className={s.center}>
+          <Link href="/content">
+            <button id="btnOn">Enter</button>
+          </Link>
         </div>
       </div>
     </>
   );
 }
+
+export default Login;
