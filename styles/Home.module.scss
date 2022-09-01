@@ -42,7 +42,7 @@
   }
 }
 .active {
-  border-bottom: 5px solid $blue !important;
+  border-bottom: 3px solid $blue !important;
   border-radius: 5px;
   box-shadow: 0px 2px 8px 0px #0000001a;
 }
@@ -65,6 +65,18 @@
   height: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+.center {
+  padding-top: 250px;
+  width: 150px;
+  margin: 0 auto;
+  button {
+    @extend %Btn;
+    @extend %BtnContained;
+    border-radius: 4px;
+    border: none;
+  }
 }
 
 .header {

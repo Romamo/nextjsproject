@@ -5,7 +5,6 @@
 // };
 
 const moduleExports = {
-  unstable_runtimeJS: false,
   experimental: {
     images: {
       allowFutureImage: true,
