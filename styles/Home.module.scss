@@ -67,6 +67,18 @@
   position: relative;
 }
 
+.promo {
+  filter: blur(5px);
+  position: relative;
+  &::after {
+    content: "\1F512";
+    font-size: 150px;
+    position: absolute;
+    left: 42%;
+    top: 28%;
+  }
+}
+
 .center {
   padding-top: 250px;
   width: 150px;

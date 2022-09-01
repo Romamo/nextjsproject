@@ -34,11 +34,11 @@ function Login() {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <a href="https://next2.appstorespy.com/login">
+              <Link href="/content-full">
                 <Button id="btnBack" variant="outlined">
                   Login
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </header>

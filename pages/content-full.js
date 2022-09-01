@@ -5,16 +5,9 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
+import Link from "next/link";
 
-// let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
-
-// let boolean = typeof window !== "undefined" && document.cookie.includes("user=John");
-
-export const config = {
-  unstable_runtimeJS: false,
-};
-
-export default function Content({}) {
+export default function ContentFull({}) {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
@@ -48,11 +41,11 @@ export default function Content({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <a href="https://next2.appstorespy.com/login">
+              <Link href="/login">
                 <Button id="btnBack" variant="outlined">
                   Login
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </header>
@@ -61,19 +54,17 @@ export default function Content({}) {
             <h1>Welcome to Next.js!</h1>
             <Image src={vercel} />
           </div>
-          <div className={s.promo}>
-            <div className={s.main}>
-              {divList &&
-                divList.map((item, index) => (
-                  <div
-                    className={rotate === index ? s.rotate : null}
-                    onClick={() => handleRotate(index)}
-                    key={index}
-                  >
-                    {item}
-                  </div>
-                ))}
-            </div>
+          <div className={s.main}>
+            {divList &&
+              divList.map((item, index) => (
+                <div
+                  className={rotate === index ? s.rotate : null}
+                  onClick={() => handleRotate(index)}
+                  key={index}
+                >
+                  {item}
+                </div>
+              ))}
           </div>
         </div>
       </div>
