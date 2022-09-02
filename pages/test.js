@@ -6,15 +6,11 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 
-// let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
-
-// let boolean = typeof window !== "undefined" && document.cookie.includes("name=user");
-
 export const config = {
   unstable_runtimeJS: false,
 };
 
-export default function Content({}) {
+export default function Test({}) {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
@@ -49,7 +45,7 @@ export default function Content({}) {
             </div>
             <div className={s.header__btns}>
               <a href="https://next2.appstorespy.com/login">
-                <Button id="btnBack" variant="outlined">
+                <Button id="btnOn" variant="outlined">
                   Login
                 </Button>
               </a>

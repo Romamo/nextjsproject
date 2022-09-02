@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function ContentFull({}) {
+export default function TestFull({}) {
   const navList = ["Item", "Item", "Item", "Item"];
   const [state, SetState] = React.useState(null);
   const handleClick = (index) => {
