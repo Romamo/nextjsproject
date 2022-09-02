@@ -30,7 +30,7 @@ export default function Test({}) {
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
-          <a href="/">
+            <a href="/">
               <Image src={logo} alt="AppstoreSpy Logo" />
             </a>
             <div className={s.header__nav}>
@@ -46,11 +46,15 @@ export default function Test({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <a href="https://next2.appstorespy.com/login">
-                <Button id="btnOn" variant="outlined">
-                  Login
-                </Button>
-              </a>
+              {/* <a href="https://next2.appstorespy.com/login"> */}
+              <Button
+                href="https://next2.appstorespy.com/login"
+                id="btnOn"
+                variant="outlined"
+              >
+                Login
+              </Button>
+              {/* </a> */}
             </div>
           </div>
         </header>
