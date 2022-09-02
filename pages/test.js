@@ -44,7 +44,6 @@ export default function Test({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              {/* <a href="https://next2.appstorespy.com/login"> */}
               <Button
                 href="https://next2.appstorespy.com/login"
                 id="btnOn"
@@ -52,7 +51,6 @@ export default function Test({}) {
               >
                 Login
               </Button>
-              {/* </a> */}
             </div>
           </div>
         </header>
