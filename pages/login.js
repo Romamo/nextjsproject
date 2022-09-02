@@ -44,7 +44,7 @@ function Login() {
         </header>
 
         <div className={s.center}>
-          <Link href="/content-full">
+          <Link href="/content">
             <button id="btnOn">Enter</button>
           </Link>
         </div>
