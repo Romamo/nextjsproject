@@ -20,7 +20,9 @@ function Login() {
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
-            <Image src={logo} alt="AppstoreSpy Logo" />
+          <Link href="/">
+              <Image src={logo} alt="AppstoreSpy Logo" />
+            </Link>
             <div className={s.header__nav}>
               {navList &&
                 navList.map((item, index) => (

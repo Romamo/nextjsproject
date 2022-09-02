@@ -30,7 +30,9 @@ export default function Test({}) {
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
-            <Image src={logo} alt="AppstoreSpy Logo" />
+          <a href="/">
+              <Image src={logo} alt="AppstoreSpy Logo" />
+            </a>
             <div className={s.header__nav}>
               {navList &&
                 navList.map((item, index) => (

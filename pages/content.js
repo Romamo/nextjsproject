@@ -5,6 +5,7 @@ import vercel from "../public/vercel.svg";
 import React from "react";
 import Button from "@mui/material/Button";
 import Head from "next/head";
+import Link from "next/link";
 
 // let boolean = typeof window !== "undefined" && window.localStorage.JS === "ON";
 
@@ -34,7 +35,9 @@ export default function Content({}) {
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
-            <Image src={logo} alt="AppstoreSpy Logo" />
+          <Link href="/">
+              <Image src={logo} alt="AppstoreSpy Logo" />
+            </Link>
             <div className={s.header__nav}>
               {navList &&
                 navList.map((item, index) => (

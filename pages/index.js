@@ -21,7 +21,9 @@ export default function HomePage({}) {
       <div className={s.page}>
         <header className={s.header}>
           <div className={s.header__wrapper}>
-            <Image src={logo} alt="AppstoreSpy Logo" />
+            <Link href="/">
+              <Image src={logo} alt="AppstoreSpy Logo" />
+            </Link>
             <div className={s.header__nav}>
               {navList &&
                 navList.map((item, index) => (
@@ -35,12 +37,12 @@ export default function HomePage({}) {
                 ))}
             </div>
             <div className={s.header__btns}>
-              <Link href="/content">
+              <Link href="/test">
                 <button id="btnOn" data-boolean="true">
                   JS On
                 </button>
               </Link>
-              <Link href="/content">
+              <Link href="/test">
                 <Button id="btnOff" variant="contained">
                   JS Off
                 </Button>
