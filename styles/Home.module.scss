@@ -3,7 +3,6 @@
 .FourOhFour {
   position: relative;
   background: linear-gradient(45deg, #a8e0ed, #e9d6fe);
-
   width: 100%;
   height: 100vh;
   .wrapper {
@@ -30,17 +29,10 @@
       background-clip: text;
       color: transparent;
       text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.5);
-      text-shadow:
-    /*this is the real color of the text - just blurred*/ 0
-          1px 5px
+      text-shadow: 0 1px 5px
           linear-gradient(0deg, rgb(178, 222, 224), rgb(172, 224, 249) 55%),
-        /* these are the dark inset shadows 
-    the second one add a sharper look and depth to the top of the letters */
-          0 -1px 0 rgba(0, 0, 0, 1),
-        0 -3px 0 rgba(0, 0, 0, 0.45),
-        /* these are the highlights - using rgba you can change the last value if they are too (or too little) bright */
-          0 1px 0 rgba(255, 255, 255, 0.5),
-        0 2px 2px rgba(255, 255, 255, 0.2);
+        0 -1px 0 rgba(0, 0, 0, 1), 0 -3px 0 rgba(0, 0, 0, 0.45),
+        0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 2px rgba(255, 255, 255, 0.2);
     }
     span {
       font-size: 27px;
@@ -53,7 +45,8 @@
       font-size: 20px;
       color: #4b4c4f;
     }
-    button {
+    a {
+      letter-spacing: 1.2px;
       margin-top: 20px;
       @extend %Btn;
       background: white;
@@ -63,15 +56,14 @@
       line-height: 120%;
       border-radius: 30px;
       font-weight: 700;
-      transition: all 0.8s;
+      transition: all 1s;
       padding: 10px 36px;
       position: relative;
       transform: translateY(0);
       &:hover {
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         box-shadow: 0px 10px 6px -4px rgba(34, 60, 80, 0.2);
       }
-      
     }
   }
 }
@@ -165,6 +157,10 @@
     border-radius: 4px;
     border: none;
     cursor: grab;
+    padding: 12px 36px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -260,7 +256,8 @@
   &__btns {
     display: flex;
     gap: 10px;
-    button {
+    button,
+    a {
       @extend %Btn;
       border-radius: 5px;
       font-family: inherit;

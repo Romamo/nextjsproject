@@ -1,7 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import s from "../styles/Home.module.scss";
 import Button from "@mui/material/Button";
+
+export const config = {
+  unstable_runtimeJS: false,
+};
 
 function FourOhFour() {
   return (
@@ -11,9 +14,9 @@ function FourOhFour() {
         <h1>404</h1>
         <span>Opps! Page not found</span>
         <p>Sorry, the page you&apos;re looking for doesn&apos;t exist.</p>
-        <Link href="/">
-          <Button variant="contained">BACK TO HOME</Button>
-        </Link>
+        <Button href="/" variant="contained">
+          BACK TO HOME
+        </Button>
       </div>
     </div>
   );
