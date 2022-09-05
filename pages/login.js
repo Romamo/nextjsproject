@@ -15,7 +15,9 @@ function Login() {
         <Header />
         <div className={s.center}>
           <Link href="/test">
-            <Button variant="contained" id="btnOn">Enter</Button>
+            <Button variant="contained" id="btnOn">
+              Enter
+            </Button>
           </Link>
         </div>
       </div>

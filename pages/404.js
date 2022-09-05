@@ -1,6 +1,5 @@
 import React from "react";
 import s from "../styles/Home.module.scss";
-import Button from "@mui/material/Button";
 
 export const config = {
   unstable_runtimeJS: false,
@@ -14,9 +13,7 @@ function FourOhFour() {
         <h1>404</h1>
         <span>Opps! Page not found</span>
         <p>Sorry, the page you&apos;re looking for doesn&apos;t exist.</p>
-        <Button href="/" variant="contained">
-          BACK TO HOME
-        </Button>
+        <a href="/">BACK TO HOME</a>
       </div>
     </div>
   );
