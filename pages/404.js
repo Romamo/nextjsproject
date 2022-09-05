@@ -1,3 +1,4 @@
+import { Link } from "@material-ui/core";
 import React from "react";
 import s from "../styles/Home.module.scss";
 
@@ -13,7 +14,7 @@ function FourOhFour() {
         <h1>404</h1>
         <span>Opps! Page not found</span>
         <p>Sorry, the page you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/">BACK TO HOME</a>
+        <Link href="/">BACK TO HOME</Link>
       </div>
     </div>
   );
