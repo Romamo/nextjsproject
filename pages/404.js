@@ -10,7 +10,7 @@ function FourOhFour() {
         <div className={s.blur}></div>
         <h1>404</h1>
         <span>Opps! Page not found</span>
-        <p>Sorry, the page you're looking for doesn't exist.</p>
+        <p>Sorry, the page you&apos;re looking for doesn&apos;t exist.</p>
         <Link href="/">
           <Button variant="contained">BACK TO HOME</Button>
         </Link>
