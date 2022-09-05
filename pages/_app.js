@@ -1,8 +1,11 @@
 import "../styles/globals.css";
+import { CacheProvider } from "@emotion/react";
 import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../public/theme";
+import createEmotionCache from "../components/createEmotionCache";
+import theme from "../components/theme";
 import React from "react";
+
+const emotionCache = createEmotionCache();
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -15,11 +18,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </CacheProvider>
     </React.Fragment>
   );
 }

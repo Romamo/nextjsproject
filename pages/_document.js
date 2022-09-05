@@ -18,10 +18,10 @@ export default class MyDocument extends Document {
             name="description"
             content="Test your website with the free SEO check from Seobility and get tips for a better search engine optimization."
           />
-          {/* <meta
+          <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
-          /> */}
+          />
           <style dangerouslySetInnerHTML={createFontStyle()} />
         </Head>
         <body>
