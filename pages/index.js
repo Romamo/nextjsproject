@@ -1,11 +1,8 @@
 import Image from "next/future/image";
 import s from "../styles/Home.module.scss";
-import logo from "../public/images/logo.svg";
 import vercel from "../public/vercel.svg";
 import React from "react";
-import Button from "@mui/material/Button";
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/Header";
 
 export default function HomePage({}) {
